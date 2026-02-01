@@ -1,178 +1,126 @@
-# Ethiopia Financial Inclusion Forecasting System
 
-## Project Overview
+# Ethiopia Financial Inclusion Forecasting System (2025–2027)
 
-This repository contains the implementation of a **financial inclusion forecasting system for Ethiopia**, developed as part of a data science engagement for **Selam Analytics**, a financial technology consulting firm specializing in emerging markets.
+## 📌 Project Overview
 
-The project is commissioned by a consortium of stakeholders including:
-- Development finance institutions (DFIs)
-- Mobile money operators
-- The National Bank of Ethiopia (NBE)
+As part of a strategic engagement by **Selam Analytics**, this project develops a forecasting system to track and predict Ethiopia’s digital financial transformation. Working for a consortium including **Development Finance Institutions (DFIs)**, **Mobile Money Operators (MMOs)**, and the **National Bank of Ethiopia (NBE)**, this system models the impact of policy and infrastructure milestones on national financial inclusion.
 
-Ethiopia is undergoing a rapid digital financial transformation, driven by the expansion of mobile money services (Telebirr, M-Pesa), interoperability infrastructure (EthSwitch), and national digital public goods (Fayda ID). Despite these developments, progress in financial inclusion has slowed in recent years, raising critical policy and market questions.
+### The Business Case
 
-This project aims to **analyze, explain, and forecast Ethiopia’s financial inclusion trajectory** using the World Bank Global Findex framework.
+Ethiopia is at a digital tipping point. Since 2021, **Telebirr** and **M-Pesa** have collectively onboarded over 64 million users. In late 2024, the nation achieved a historic milestone: **P2P digital transfers surpassed ATM cash withdrawals** for the first time. Despite this, the 2024 Global Findex reveals that account ownership stands at **49%**, only 3 percentage points higher than in 2021. This system forecasts whether Ethiopia will bridge the gap to its **70% NFIS-II target** by 2025.
 
 ---
 
-## Core Research Questions
+## 🏗️ Unified Data Schema
 
-1. What factors drive financial inclusion in Ethiopia?
-2. How do policies, product launches, and infrastructure investments affect inclusion outcomes?
-3. Why did account ownership growth slow between 2021 and 2024 despite rapid mobile money expansion?
-4. How did financial inclusion change in 2025?
-5. What are plausible forecasts for financial inclusion in 2026–2027?
+The project utilizes a unified relational schema to harmonize sparse survey data with high-frequency market events.
 
----
+| Record Type | Description |
+| --- | --- |
+| **Observation** | Measured values from Findex surveys, operator reports (Ethio Telecom/Safaricom), and infrastructure data.
 
-## Financial Inclusion Framework
+ |
+| **Event** | Qualitative milestones such as the **FX Liberalization**, **M-Pesa Launch**, or **Fayda ID Rollout**.
 
-The project follows the **World Bank Global Findex definitions**, focusing on two core dimensions:
+ |
+| **Impact Link** | Modeled relationships between events and indicators (e.g., how Telebirr launch impacts P2P counts).
 
-### 1. Access — Account Ownership
-> Share of adults (15+) who report having an account at a financial institution or personally using a mobile money service in the past 12 months.
+ |
+| **Target** | Official policy goals, including the **NFIS-II Strategy**.
 
-### 2. Usage — Digital Payments
-> Share of adults who report making or receiving digital payments (mobile money, cards, internet payments) in the past 12 months.
-
-These indicators are forecasted using sparse survey data enriched with higher-frequency proxy and infrastructure indicators.
+ |
 
 ---
 
-## Dataset Design
+## 📊 Key Insights (EDA Phase)
 
-### Unified Data Schema
+1. 
+**Account Ownership Plateau:** Ownership grew from 22% in 2014 to 49% in 2024. However, the recent slowdown (+3pp between 2021-2024) suggests structural bottlenecks despite mobile money expansion.
 
-All data is stored in a **single unified dataset**:
+
+2. 
+**Usage Explosion:** P2P transaction counts grew by **158% YoY** in FY2024/25, reaching 128.3 million transactions.
+
+
+3. 
+**Infrastructure Leap:** 4G population coverage doubled from **37.5% (2023)** to **70.8% (2025)**.
+
+
+4. 
+**Persistent Gender Gap:** A **20 percentage point gap** in account ownership remains between men (56%) and women (36%) as of the latest primary disaggregated data.
+
+
+5. 
+**The Digital ID Catalyst:** **Fayda Digital ID** enrollment reached 15 million by mid-2025, serving as a critical leading indicator for future account growth.
+
+
+
+---
+
+## 🚀 Forecasting Methodology
+
+The system employs an **Event-Augmented Trend Model** to project Access and Usage for 2025–2027.
+
+* 
+**Baseline:** Linear/Log trend based on 13 years of Findex points.
+
+
+* 
+**Event Impact Layer:** Adjusts trends based on the association matrix of national events (e.g., the 2025 M-Pesa EthSwitch integration).
+
+
+* 
+**Scenario Analysis:** Provides **Optimistic** (target-aligned), **Base**, and **Pessimistic** forecasts with 95% confidence intervals.
+
+
+
+---
+
+## 📂 Project Structure
+
+```bash
+ethiopia-fi-forecast/
+├── data/
+│   ├── raw/                # ethiopia_fi_unified_data.csv & reference_codes.csv
+│   └── processed/          # Enriched and analysis-ready data
+├── notebooks/              # Notebooks
+├── src/                    # Core modeling logic
+├── dashboard/
+│   └── app.py              # Streamlit Interactive Dashboard
+├── reports/                # Interim and Final Submission reports
+└── requirements.txt        # Dependencies (Streamlit, Pandas, Scikit-Learn, Seaborn)
+
+---
+
+## 💻 Getting Started
+
+### Prerequisites
+* Python 3.9+
+* Git
+
+### Installation
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/yourusername/ethiopia-fi-forecast.git
+    cd ethiopia-fi-forecast
+    ```
+2.  **Install dependencies:**
+    ```bash
+    pip install -r requirements.txt
+    ```
+3.  **Run the Dashboard:**
+    ```bash
+    streamlit run dashboard/app.py
+    ```
+
+---
+
+## 📝 Learning Outcomes & Skills
+* **Working with Sparse Time Series:** Forecasting with limited historical data points.
+* **Event Impact Estimation:** Using comparable country evidence (e.g., Kenya M-Pesa) to weight Ethiopian market shifts.
+* **Policy Analysis:** Translating technical AI forecasts into actionable policy insights for the NBE.
+
+---
+
 
 ```
-
-ethiopia_fi_unified_data.csv
-
-```
-
-Each row represents one of four record types, identified by the `record_type` field:
-
-| record_type | Description |
-|------------|-------------|
-| `observation` | Measured values from surveys, regulators, operators |
-| `event` | Policies, product launches, market entries, milestones |
-| `impact_link` | Modeled relationships between events and indicators |
-| `target` | Official policy goals (e.g. NFIS-II targets) |
-
-This design avoids pre-assigning events to pillars, reducing bias and making causal assumptions explicit.
-
-### Reference Codes
-
-Valid categorical values and schema documentation are provided in:
-
-```
-
-reference_codes.csv
-
-```
-
----
-
-## Task 1: Data Exploration & Enrichment
-
-### Objectives
-- Understand the unified data schema
-- Assess indicator coverage and data quality
-- Review existing events and modeled impact relationships
-- Identify data gaps
-- Enrich the dataset with additional high-value observations, events, and impact links
-
-### Key Activities
-- Schema validation and record counts by type and pillar
-- Temporal coverage analysis of indicators
-- Review of event catalog and impact assumptions
-- Addition of:
-  - Infrastructure and usage proxy indicators
-  - Missing policy or product launch events
-  - Explicit impact links with direction, magnitude, and lag assumptions
-
-All enrichment decisions are documented in:
-
-```
-
-docs/data_enrichment_log.md
-
-```
-
----
-
-## Task 2: Exploratory Data Analysis (EDA)
-
-### Objectives
-- Understand historical patterns in financial inclusion
-- Identify drivers of Access and Usage
-- Explain observed stagnation in account ownership growth
-- Generate hypotheses for impact modeling and forecasting
-
-### Analysis Components
-- Account ownership trends (2011–2024)
-- Growth rate decomposition between Findex waves
-- Digital payment adoption patterns
-- Mobile money registration vs active usage gap
-- Infrastructure and enabler analysis (coverage, agent networks)
-- Event timeline overlays
-- Correlation analysis (with explicit caveats)
-
-### Outputs
-- Visualizations of Access and Usage trajectories
-- Event-annotated time series
-- Data quality and coverage assessment
-- A documented set of key analytical insights
-
----
-
-## Key Analytical Insights (Summary)
-
-- Rapid mobile money expansion did not translate proportionally into new account ownership.
-- Digital payment usage grew faster than access, driven largely by P2P transfers.
-- Gender and rural inclusion gaps remain binding constraints.
-- Infrastructure is necessary but insufficient without merchant ecosystems.
-- Event impacts appear lagged, supporting intervention-based modeling approaches.
-
----
-
-## Methodological Approach
-
-- Sparse outcome modeling using Global Findex survey points
-- Enrichment with higher-frequency proxy indicators
-- Explicit modeling of event impacts via intervention variables
-- Conservative treatment of causality and uncertainty
-- Scenario-based forecasting with confidence bounds
-
----
-
-## Tools & Technologies
-
-- **Python** (pandas, numpy, statsmodels, scikit-learn)
-- **Visualization** (matplotlib, seaborn, plotly)
-- **Notebooks** (Jupyter / Colab)
-- **Dashboard (planned)**: Streamlit or Dash
-
-Dependencies are listed in `requirements.txt`.
-
----
-
-## Limitations
-
-- Global Findex data is only available every three years
-- Some indicators rely on operator-reported aggregates
-- Impact links represent modeled assumptions, not causal proof
-- Forecasts are subject to policy, regulatory, and market uncertainty
-
-These limitations are explicitly documented and incorporated into modeling choices.
-
----
-
-## Future Work
-
-- Intervention-augmented regression modeling
-- Forecasts for 2025–2027 with uncertainty bands
-- Interactive dashboard for policymakers
-- Sensitivity analysis across policy and infrastructure scenarios
-
