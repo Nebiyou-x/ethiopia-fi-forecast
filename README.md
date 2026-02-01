@@ -34,24 +34,19 @@ The project utilizes a unified relational schema to harmonize sparse survey data
 
 ## 📊 Key Insights (EDA Phase)
 
-1. 
-**Account Ownership Plateau:** Ownership grew from 22% in 2014 to 49% in 2024. However, the recent slowdown (+3pp between 2021-2024) suggests structural bottlenecks despite mobile money expansion.
+1. **Account Ownership Plateau:** Ownership grew from 22% in 2014 to 49% in 2024. However, the recent slowdown (+3pp between 2021-2024) suggests structural bottlenecks despite mobile money expansion.
 
 
-2. 
-**Usage Explosion:** P2P transaction counts grew by **158% YoY** in FY2024/25, reaching 128.3 million transactions.
+2. **Usage Explosion:** P2P transaction counts grew by **158% YoY** in FY2024/25, reaching 128.3 million transactions.
 
 
-3. 
-**Infrastructure Leap:** 4G population coverage doubled from **37.5% (2023)** to **70.8% (2025)**.
+3. **Infrastructure Leap:** 4G population coverage doubled from **37.5% (2023)** to **70.8% (2025)**.
 
 
-4. 
-**Persistent Gender Gap:** A **20 percentage point gap** in account ownership remains between men (56%) and women (36%) as of the latest primary disaggregated data.
+4. **Persistent Gender Gap:** A **20 percentage point gap** in account ownership remains between men (56%) and women (36%) as of the latest primary disaggregated data.
 
 
-5. 
-**The Digital ID Catalyst:** **Fayda Digital ID** enrollment reached 15 million by mid-2025, serving as a critical leading indicator for future account growth.
+5. **The Digital ID Catalyst:** **Fayda Digital ID** enrollment reached 15 million by mid-2025, serving as a critical leading indicator for future account growth.
 
 
 
@@ -60,16 +55,9 @@ The project utilizes a unified relational schema to harmonize sparse survey data
 ## 🚀 Forecasting Methodology
 
 The system employs an **Event-Augmented Trend Model** to project Access and Usage for 2025–2027.
-
-* 
+ 
 **Baseline:** Linear/Log trend based on 13 years of Findex points.
-
-
-* 
 **Event Impact Layer:** Adjusts trends based on the association matrix of national events (e.g., the 2025 M-Pesa EthSwitch integration).
-
-
-* 
 **Scenario Analysis:** Provides **Optimistic** (target-aligned), **Base**, and **Pessimistic** forecasts with 95% confidence intervals.
 
 
@@ -101,7 +89,7 @@ ethiopia-fi-forecast/
 ### Installation
 1.  **Clone the repository:**
     ```bash
-    git clone https://github.com/yourusername/ethiopia-fi-forecast.git
+    git clone https://github.com/Nebiyou-x/ethiopia-fi-forecast.git
     cd ethiopia-fi-forecast
     ```
 2.  **Install dependencies:**
@@ -123,4 +111,3 @@ ethiopia-fi-forecast/
 ---
 
 
-```
