@@ -1,0 +1,15 @@
+# Data
+data/raw/
+data/processed/
+
+# Models
+models/
+
+# Environment
+.env
+venv/
+__pycache__/
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
