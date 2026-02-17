@@ -21,7 +21,7 @@ This project builds a forecasting system that:
 - Provides an interactive dashboard for scenario analysis
 - The system transforms static data into forward-looking insights for strategic decision-making
 
-Result Visualization Chart (https://github.com/Nebiyou-x/ethiopia-fi-forecast/blob/3de6a1c042711de94a3a568660bc854f4203f05e/reports/figures/output.png)
+Result Visualization Chart <img alt="Result chart" src="https://github.com/Nebiyou-x/ethiopia-fi-forecast/blob/3de6a1c042711de94a3a568660bc854f4203f05e/reports/figures/output.png">
 
 ## 🏗️ Technical Methodology
 
