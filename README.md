@@ -1,3 +1,5 @@
+<img width="2844" height="1394" alt="image" src="https://github.com/user-attachments/assets/f2eb8e90-853c-41a2-a3e9-fb3392a21feb" />[![Ethiopia FI Forecast CI](https://github.com/Nebiyou-x/ethiopia-fi-forecast/actions/workflows/testing.yml/badge.svg)](https://github.com/Nebiyou-x/ethiopia-fi-forecast/actions/workflows/testing.yml)
+
 # Ethiopia Financial Inclusion Forecasting System (2025–2027)
 
 ## 📌 Project Overview
@@ -9,6 +11,17 @@ This repository contains the end-to-end forecasting system developed for **Selam
 Ethiopia is currently navigating a radical digital financial transformation. While infrastructure and mobile money usage (Telebirr/M-Pesa) are growing exponentially, the 2024 Global Findex indicates that account ownership is lagging behind national targets. This system provides data-driven forecasts to help stakeholders decide on policy interventions and infrastructure investments for the 2025–2027 period.
 
 ---
+
+### Solution Overview
+
+This project builds a forecasting system that:
+- Integrates financial inclusion data from multiple sources
+- Models the impact of major financial sector events
+- Uses time-series forecasting to predict future trends
+- Provides an interactive dashboard for scenario analysis
+- The system transforms static data into forward-looking insights for strategic decision-making
+
+Result Visualization Chart (https://github.com/Nebiyou-x/ethiopia-fi-forecast/blob/3de6a1c042711de94a3a568660bc854f4203f05e/reports/figures/output.png)
 
 ## 🏗️ Technical Methodology
 
@@ -58,6 +71,9 @@ The primary dataset was enriched with high-frequency proxy indicators to bridge 
 * Deploying an interactive Streamlit dashboard.
 * Integrating "What-if" scenario sliders for policy-makers to test the impact of future regulatory decisions.
 
+
+  Fig Dashboard Screenshot (https://github.com/Nebiyou-x/ethiopia-fi-forecast/blob/4ad816e1c4fac9b4f2e3029afefc99108b789f6e/reports/figures/image.png)
+
 ---
 
 ## 📂 Repository Structure
@@ -72,6 +88,9 @@ The primary dataset was enriched with high-frequency proxy indicators to bridge 
 ├── src/                    # Python modules for impact modeling
 ├── dashboard/              # Streamlit application files
 └── reports/                # Project documentation and interim reports
+├── requirements.txt        # Project dependencies
+└── README.md 
+
 
 ```
 
