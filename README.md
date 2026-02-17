@@ -1,4 +1,4 @@
-<img width="2844" height="1394" alt="image" src="https://github.com/user-attachments/assets/f2eb8e90-853c-41a2-a3e9-fb3392a21feb" />[![Ethiopia FI Forecast CI](https://github.com/Nebiyou-x/ethiopia-fi-forecast/actions/workflows/testing.yml/badge.svg)](https://github.com/Nebiyou-x/ethiopia-fi-forecast/actions/workflows/testing.yml)
+[![Ethiopia FI Forecast CI](https://github.com/Nebiyou-x/ethiopia-fi-forecast/actions/workflows/testing.yml/badge.svg)](https://github.com/Nebiyou-x/ethiopia-fi-forecast/actions/workflows/testing.yml)
 
 # Ethiopia Financial Inclusion Forecasting System (2025–2027)
 
@@ -72,7 +72,7 @@ The primary dataset was enriched with high-frequency proxy indicators to bridge 
 * Integrating "What-if" scenario sliders for policy-makers to test the impact of future regulatory decisions.
 
 
-  Fig Dashboard Screenshot (https://github.com/Nebiyou-x/ethiopia-fi-forecast/blob/4ad816e1c4fac9b4f2e3029afefc99108b789f6e/reports/figures/image.png)
+  Fig Dashboard Screenshot <img width="2844" height="1394" alt="image" src="https://github.com/user-attachments/assets/f2eb8e90-853c-41a2-a3e9-fb3392a21feb" />
 
 ---
 
